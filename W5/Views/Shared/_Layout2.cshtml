@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Layout2.css" />
+</head>
+
+<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Cover</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link text-gray" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="nav-link text-gray" asp-area="" asp-controller="Home" asp-action="Layout1">Layout1</a>
+            <a class="nav-link text-gray" asp-area="" asp-controller="Home" asp-action="Layout2">Layout 2</a>
+            <a class="nav-link text-gray" asp-area="" asp-controller="Home" asp-action="Layout3">Layout 3</a>   
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        @RenderBody()
+
+        <div class="text-muted">
+            @RenderSection("Sidenote", required: false)
+        </div>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com/"> Bootstrap </a></p>
+        </div>
+      </footer>
+      <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    </div>
+  </body>
+</html>
